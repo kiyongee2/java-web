@@ -1,0 +1,29 @@
+*** AWS RDS 서비스로 mysql 연결
+- RDS 대시보드 -> 데이터베이스 생성
+- MySQL 
+- 프리티어
+- DB인스턴스: spacecl
+- hostname(엔드포인트):spacecl.c3ucywos8r13.ap-southeast-2.rds.amazonaws.com
+- user: space
+- 비번(8자이상-*********)
+- 연결 : EC2 컴퓨팅 리소스에 연결안함, 퍼블릭엑세스: 예
+- 보안 그룹:  sg-fdfdf-default > 인바운드 -규칙 추가 >mysql 3306
+- 5분 정도 시간 소요후 db 인스턴스 생성됨
+
+
+** workbench 설정
+- hostname:spacecl.crqmsmmq203o.ap-southeast-2.rds.amazonaws.com
+- port: 3306
+- user:space
+- password:space1234
+
+-db 생성 
+create database spacedb;(이미 권한 부여됨)
+use spacedb;
+
+스프링부트 - applicaton.property
+# DataSource 설정 - mysql(aws-rds)
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://spacecl.crqmsmmq203o.ap-southeast-2.rds.amazonaws.com:3306/spacedb?serverTimezone=Asia/Seoul 
+spring.datasource.username=space
+spring.datasource.hikari.password=space1234
