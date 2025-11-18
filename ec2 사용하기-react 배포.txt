@@ -30,10 +30,10 @@ sudo apt install git
 git clone 리엑트 프로젝트 리포지터리
 node_moudle이 gitignore 되어 없으므로
 npm install - node_module 생성됨
-npm run build
+npm run build ->production build(운영 빌드), npm start(development build)
 npm install -g serve
 serve -s build
-접속 오류
+접속 오류(https 8443포트 개방하지 않음)
 *** nginx 설치
 sudo systemctl start nginx -> 시작
 sudo systemctl enable nginx
