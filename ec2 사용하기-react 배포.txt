@@ -28,6 +28,8 @@ npm -v, node -v 확인
 *** github 연결(git 없으면 설치)
 sudo apt install git
 git clone 리엑트 프로젝트 리포지터리
+node_moudle이 gitignore 되어 없으므로
+npm install - node_module 생성됨
 npm run build
 npm install -g serve
 serve -s build
