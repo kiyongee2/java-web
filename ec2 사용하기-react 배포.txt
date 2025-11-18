@@ -31,11 +31,14 @@ npm install -g serve
 serve -s build
 접속 오류
 *** nginx 설치
-sudo systemctl start nginx
+sudo systemctl start nginx -> 시작
 sudo systemctl enable nginx
 sudo rm -rf /var/www/html/*  -> 기존 html 삭제
 sudo cp -r build/* /var/www/html/ ->빌드 파일 복사
-sudo systemctl restart nginx
+sudo systemctl restart nginx -> 재시작
+
+sudo systemctl status nginx -> 상태
+sudo systemctl stop nginx -> 중지
 
 ** 보안 그룹 규칙 추가
 80 - HTTP
