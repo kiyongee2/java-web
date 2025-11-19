@@ -32,6 +32,7 @@ node_moudle이 gitignore 되어 없으므로 npm 설치해야함
 npm install -> npm install - node_module 생성됨
 npm run build ->production build(운영 빌드), npm start(development build)
 npm install -g serve
+sudo snap install serve
 serve -s build
 *** 접속 오류(https 8443포트 개방) 
 ** 보안 그룹 규칙 추가
