@@ -29,6 +29,12 @@ $ sudo apt install openjdk-21-jdk (설치)
 $ java -version(설치 확인)
 
 ** jar 파일 업로드 명령
+pem  파일 권한 수정
+icacls "D:\aws-ec2\my-ec2-key.pem" /inheritance:r
+icacls "D:\aws-ec2\my-ec2-key.pem" /grant:r "%USERNAME%:R"
+권한 확인
+icacls "D:\aws-ec2\my-ec2-key.pem"
+
 scp -i [키파일.pem] [업로드할_파일명] [EC2_계정명]@[EC2_IP]:[저장할_경로]
 예) D:/aws-ec2 폴더안에 pem과 jar파일 준비, EC2 퍼블릭 IP - 52.62.171.176
 D:\aws-ec2>scp -i "my-ec2-key.pem" "test_app.jar" ubuntu@52.62.171.176:/home/ubuntu/
