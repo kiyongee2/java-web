@@ -28,26 +28,28 @@ npm -v, node -v 확인
 *** github 연결(git 없으면 설치)
 sudo apt install git
 git clone 리엑트 프로젝트 리포지터리
-node_moudle이 gitignore 되어 없으므로
-npm install - node_module 생성됨
+node_moudle이 gitignore 되어 없으므로 npm 설치해야함
+npm install -> npm install - node_module 생성됨
 npm run build ->production build(운영 빌드), npm start(development build)
 npm install -g serve
 serve -s build
-접속 오류(https 8443포트 개방하지 않음)
-*** nginx 설치 - (Apach 같은 웹서버로서 http로 통신)
-sudo systemctl start nginx -> 시작
-sudo systemctl enable nginx
-sudo rm -rf /var/www/html/*  -> 기존 html 삭제
-sudo cp -r build/* /var/www/html/ ->빌드 파일 복사
-sudo systemctl restart nginx -> 재시작
-
-sudo systemctl status nginx -> 상태
-sudo systemctl stop nginx -> 중지
-
+*** 접속 오류(https 8443포트 개방) 
 ** 보안 그룹 규칙 추가
 80 - HTTP
 22- SSH
+8443 - TCP
+https:IP:8443 (브라우저 확인)
+
+- 80포트 사용
+npx serve -s build -l 80 -> 설치
+sudo npx serve -s build -l 80 -> root 권한
 
 ** 브라우저 접속
 http:<퍼블릭IP>
+
+** 실행 중지
+pkill serve
+
+
+
 
